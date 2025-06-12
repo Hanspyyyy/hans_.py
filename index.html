@@ -6,19 +6,17 @@
   <title>Hakiman - Portofolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
-    body, html {
+    html, body {
       margin: 0;
-      padding: 0px;
+      padding: 0;
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: white;
       text-align: center;
       overflow: hidden;
-      background: black url('alok4.gif') no-repeat center center fixed;
-      background-size: cover;
-      visibility: hidden; /* disembunyikan sampai loading selesai */
     }
 
+    /* LOADING OVERLAY */
     #loadingOverlay {
       position: fixed;
       z-index: 9999;
@@ -32,9 +30,27 @@
       align-items: center;
     }
 
-    #loadingOverlay img {
-      width: 200px;
-      height: auto;
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid white;
+      border-top: 6px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* KONTEN UTAMA SEMBUNYI DULU */
+    #mainContent {
+      display: none;
+      background: black url('alok4.gif') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      overflow-y: auto;
     }
 
     .container {
@@ -131,45 +147,46 @@
 </head>
 <body>
 
-  <!-- LOADING OVERLAY -->
+  <!-- LOADING -->
   <div id="loadingOverlay">
-    <img src="loading.gif" alt="Loading..." />
+    <div class="spinner"></div>
   </div>
 
-  <div class="container">
-    <img src="ui11.png" alt="Foto Profil" class="profile-img" />
-    <div class="name-container">
-      <div id="nameDisplay" class="typing-text">HAKIMAN NURHOLIS</div>
-    </div>
-    <p>INFORMATICS ENTHUSIAST 
-        TECH>_GENERALIS|GAME|CYBER|CODE </p>
+  <!-- KONTEN UTAMA -->
+  <div id="mainContent">
+    <div class="container">
+      <img src="ui11.png" alt="Foto Profil" class="profile-img" />
+      <div class="name-container">
+        <div id="nameDisplay" class="typing-text">HAKIMAN NURHOLIS</div>
+      </div>
+      <p>INFORMATICS ENTHUSIAST 
+          TECH>_GENERALIS|GAME|CYBER|CODE </p>
 
-    <div class="social-icons">
-      <a href="https://hanspyyyy.github.io/hans_.py/" target="_blank"><img src="gt1.png" alt="GitHub"></a>
-      <a href="https://www.tiktok.com/@hans_.py?_t=ZS-8wG6A2HEbyC&_r=1" target="_blank"><img src="tiktok1.png" alt="TikTok"></a>
-      <a href="" target="_blank"><img src="ig.png" alt="Instagram"></a>
-      <a href="https://youtube.com/@hans.pyyyyy?si=Yy2l5C558uQ2ynDR" target="_blank"><img src="yt1.png" alt="YouTube"></a>
-      <a href="https://t.me/piandidev" target="_blank"><img src="tl.png" alt="Telegram"></a>
-      <a href="https://www.facebook.com/profile.php?id=61576289065160" target="_blank"><img src="fb.png" alt="Facebook"></a>
-      <a href="https://www.instagram.com/hakiman_nurholis?igsh=Nno1OHg5Nnl1MHE5" target="_blank"><img src="in.png" alt="LinkedIn"></a>
-      <a href="https://wa.me/6288976444565" target="_blank"><img src="wab2.png" alt="WhatsApp bisnis"></a>
-      <a href="https://pintarnya.com/cv/hakiman-nurkholis-khu03gabgw" target="_blank"><img src="pi1.png" alt="pintarnya"></a>
-    </div>
+      <div class="social-icons">
+        <a href="https://hanspyyyy.github.io/hans_.py/" target="_blank"><img src="gt1.png" alt="GitHub"></a>
+        <a href="https://www.tiktok.com/@hans_.py?_t=ZS-8wG6A2HEbyC&_r=1" target="_blank"><img src="tiktok1.png" alt="TikTok"></a>
+        <a href="https://www.instagram.com/hakiman_nurkholis?igsh=Nno1OHg5Nnl1MHE5" target="_blank"><img src="ig.png" alt="Instagram"></a>
+        <a href="https://youtube.com/@hans.pyyyyy?si=Yy2l5C558uQ2ynDR" target="_blank"><img src="yt1.png" alt="YouTube"></a>
+        <a href="https://t.me/piandidev" target="_blank"><img src="tl.png" alt="Telegram"></a>
+        <a href="https://www.facebook.com/profile.php?id=61576289065160" target="_blank"><img src="fb.png" alt="Facebook"></a>
+        <a href="" target="_blank"><img src="in.png" alt="LinkedIn"></a>
+        <a href="https://wa.me/6288976444565" target="_blank"><img src="wab2.png" alt="WhatsApp bisnis"></a>
+        <a href="https://pintarnya.com/cv/hakiman-nurkholis-khu03gabgw" target="_blank"><img src="pi1.png" alt="pintarnya"></a>
+      </div>
 
-    <div class="buttons">
-      <a href="https://hanspyyyy.github.io/Portofolio_MA.hans/" target="_blank">Portofolio SMA</a>
-      <a href="#" target="_blank">All your needs 🛒 </a>
-      <a href="https://hanspyyyy.github.io/Daftar-game-hans/" target="_blank">Game Hans</a>
-      <a href="https://hanspyyyy.github.io/PORTOFOLIO-MAHASISWA/" target="_blank">Portofolio S1</a>
+      <div class="buttons">
+        <a href="https://hanspyyyy.github.io/Portofolio_MA.hans/" target="_blank">Portofolio SMA</a>
+        <a href="#" target="_blank">All your needs 🛒 </a>
+        <a href="https://hanspyyyy.github.io/Daftar-game-hans/" target="_blank">Game Hans</a>
+        <a href="https://hanspyyyy.github.io/PORTOFOLIO-MAHASISWA/" target="_blank">Portofolio S1</a>
+      </div>
     </div>
   </div>
 
   <script>
-    // Ubah GIF ke base64 supaya bisa langsung dimuat tanpa delay server
     window.addEventListener("load", function () {
-      const loader = document.getElementById("loadingOverlay");
-      loader.style.display = "none";
-      document.body.style.visibility = "visible";
+      document.getElementById("loadingOverlay").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
     });
 
     const nameElement = document.getElementById("nameDisplay");
@@ -192,4 +209,4 @@
     setInterval(switchName, 5000);
   </script>
 </body>
-        </html>
+          </html>
