@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -15,6 +16,25 @@
       overflow: hidden;
       background: black url('alok4.gif') no-repeat center center fixed;
       background-size: cover;
+      visibility: hidden; /* disembunyikan sampai loading selesai */
+    }
+
+    #loadingOverlay {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loadingOverlay img {
+      width: 200px;
+      height: auto;
     }
 
     .container {
@@ -68,8 +88,8 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      flex-wrap:wrap;
-      gap: 12px
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 15px;
       max-width: 300px;
       margin-left: auto;
@@ -111,6 +131,11 @@
 </head>
 <body>
 
+  <!-- LOADING OVERLAY -->
+  <div id="loadingOverlay">
+    <img src="data:image/gif;base64,{{GIF_DATA_HERE}}" alt="Loading..." />
+  </div>
+
   <div class="container">
     <img src="ui11.png" alt="Foto Profil" class="profile-img" />
     <div class="name-container">
@@ -126,10 +151,9 @@
       <a href="https://youtube.com/@hans.pyyyyy?si=Yy2l5C558uQ2ynDR" target="_blank"><img src="yt1.png" alt="YouTube"></a>
       <a href="https://t.me/piandidev" target="_blank"><img src="tl.png" alt="Telegram"></a>
       <a href="https://www.facebook.com/profile.php?id=61576289065160" target="_blank"><img src="fb.png" alt="Facebook"></a>
-      <a href="" target="_blank><img
-        <a href="https://www.linkedin.com/in/hakiman-nurholis-1b0317363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="in.png" alt="LinkedIn"></a>
-        <a href="https://wa.me/6288976444565" target="_blank"><img src="wab2.png" alt="WhatsApp bisnis"></a>
-        <a href="https://pintarnya.com/cv/hakiman-nurkholis-khu03gabgw" target="_blank"><img src="pi1.png" alt="pintarnya"></a>
+      <a href="" target="_blank"><img src="in.png" alt="LinkedIn"></a>
+      <a href="https://wa.me/6288976444565" target="_blank"><img src="wab2.png" alt="WhatsApp bisnis"></a>
+      <a href="https://pintarnya.com/cv/hakiman-nurkholis-khu03gabgw" target="_blank"><img src="pi1.png" alt="pintarnya"></a>
     </div>
 
     <div class="buttons">
@@ -141,6 +165,13 @@
   </div>
 
   <script>
+    // Ubah GIF ke base64 supaya bisa langsung dimuat tanpa delay server
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loadingOverlay");
+      loader.style.display = "none";
+      document.body.style.visibility = "visible";
+    });
+
     const nameElement = document.getElementById("nameDisplay");
     const names = ["HAKIMAN NURKHOLIS", "HANS_.PY"];
     let currentIndex = 0;
@@ -160,6 +191,5 @@
 
     setInterval(switchName, 5000);
   </script>
-
 </body>
-</html>
+        </html>
