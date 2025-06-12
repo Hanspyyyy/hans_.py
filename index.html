@@ -30,18 +30,9 @@
       align-items: center;
     }
 
-    .spinner {
-      width: 60px;
-      height: 60px;
-      border: 6px solid white;
-      border-top: 6px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    #loadingOverlay img {
+      width: 120px;
+      height: auto;
     }
 
     /* KONTEN UTAMA SEMBUNYI DULU */
@@ -149,7 +140,7 @@
 
   <!-- LOADING -->
   <div id="loadingOverlay">
-    <div class="spinner"></div>
+    <img src="loading.gif" alt="Loading..." />
   </div>
 
   <!-- KONTEN UTAMA -->
@@ -157,7 +148,7 @@
     <div class="container">
       <img src="ui11.png" alt="Foto Profil" class="profile-img" />
       <div class="name-container">
-        <div id="nameDisplay" class="typing-text">HAKIMAN NURHOLIS</div>
+        <div id="nameDisplay" class="typing-text">HAKIMAN NURKHOLIS</div>
       </div>
       <p>INFORMATICS ENTHUSIAST 
           TECH>_GENERALIS|GAME|CYBER|CODE </p>
@@ -185,8 +176,10 @@
 
   <script>
     window.addEventListener("load", function () {
-      document.getElementById("loadingOverlay").style.display = "none";
-      document.getElementById("mainContent").style.display = "block";
+      setTimeout(function () {
+        document.getElementById("loadingOverlay").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      }, 1500); // Tambahin delay 1.5 detik
     });
 
     const nameElement = document.getElementById("nameDisplay");
@@ -209,4 +202,4 @@
     setInterval(switchName, 5000);
   </script>
 </body>
-          </html>
+  </html>
