@@ -30,7 +30,7 @@
       align-items: center;
     }
 
-    #loadingOverlay img {
+    #loadingOverlay video {
       width: 120px;
       height: auto;
     }
@@ -38,8 +38,6 @@
     /* KONTEN UTAMA SEMBUNYI DULU */
     #mainContent {
       display: none;
-      background: black url('alok4.gif') no-repeat center center fixed;
-      background-size: cover;
       height: 100vh;
       overflow-y: auto;
     }
@@ -140,11 +138,21 @@
 
   <!-- LOADING -->
   <div id="loadingOverlay">
-    <img src="loading.gif" alt="Loading..." />
+    <video autoplay loop muted playsinline>
+      <source src="loading.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
   </div>
 
   <!-- KONTEN UTAMA -->
   <div id="mainContent">
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay loop muted playsinline
+      style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
+      <source src="alok4.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
+
     <div class="container">
       <img src="ui11.png" alt="Foto Profil" class="profile-img" />
       <div class="name-container">
@@ -156,7 +164,7 @@
       <div class="social-icons">
         <a href="https://hanspyyyy.github.io/hans_.py/" target="_blank"><img src="gt1.png" alt="GitHub"></a>
         <a href="https://www.tiktok.com/@hans_.py?_t=ZS-8wG6A2HEbyC&_r=1" target="_blank"><img src="tiktok1.png" alt="TikTok"></a>
-        <a href="https://www.instagram.com/hakiman_nurkholis?igsh=Nno1OHg5Nnl1MHE5" target="_blank"><img src="ig.png" alt="Instagram"></a>
+        <a href="https://www.instagram.com/hakiman_nurholis?igsh=Nno1OHg5Nnl1MHE5" target="_blank"><img src="ig.png" alt="Instagram"></a>
         <a href="https://youtube.com/@hans.pyyyyy?si=Yy2l5C558uQ2ynDR" target="_blank"><img src="yt1.png" alt="YouTube"></a>
         <a href="https://t.me/piandidev" target="_blank"><img src="tl.png" alt="Telegram"></a>
         <a href="https://www.facebook.com/profile.php?id=61576289065160" target="_blank"><img src="fb.png" alt="Facebook"></a>
@@ -179,7 +187,7 @@
       setTimeout(function () {
         document.getElementById("loadingOverlay").style.display = "none";
         document.getElementById("mainContent").style.display = "block";
-      }, 1500); // Tambahin delay 1.5 detik
+      }, 1500); // Delay 1.5 detik
     });
 
     const nameElement = document.getElementById("nameDisplay");
@@ -202,4 +210,4 @@
     setInterval(switchName, 5000);
   </script>
 </body>
-  </html>
+                                                                                                                                </html>
