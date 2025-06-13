@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -5,16 +6,40 @@
   <title>Hakiman - Portofolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
-    body, html {
+    html, body {
       margin: 0;
-      padding: 0px;
+      padding: 0;
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: white;
       text-align: center;
       overflow: hidden;
-      background: black url('alok4.mp4') no-repeat center center fixed;
-      background-size: cover;
+    }
+
+    /* LOADING OVERLAY */
+    #loadingOverlay {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loadingOverlay video {
+      width: 120px;
+      height: auto;
+    }
+
+    /* KONTEN UTAMA SEMBUNYI DULU */
+    #mainContent {
+      display: none;
+      height: 100vh;
+      overflow-y: auto;
     }
 
     .container {
@@ -68,8 +93,8 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      flex-wrap:wrap;
-      gap: 12px
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 15px;
       max-width: 300px;
       margin-left: auto;
@@ -111,38 +136,62 @@
 </head>
 <body>
 
-  <div class="container">
-    <img src="ui11.png" alt="Foto Profil" class="profile-img" />
-    <div class="name-container">
-      <div id="nameDisplay" class="typing-text">HAKIMAN NURHOLIS</div>
-    </div>
-    <p>INFORMATICS ENTHUSIAST 
-        TECH>_GENERALIS|GAME|CYBER|CODE </p>
+  <!-- LOADING -->
+  <div id="loadingOverlay">
+    <video autoplay loop muted playsinline>
+      <source src="loading.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
+  </div>
 
-    <div class="social-icons">
-      <a href="https://hanspyyyy.github.io/hans_.py/" target="_blank"><img src="gt1.png" alt="GitHub"></a>
-      <a href="https://www.tiktok.com/@hans_.py?_t=ZS-8wG6A2HEbyC&_r=1" target="_blank"><img src="tiktok1.png" alt="TikTok"></a>
-      <a href="https://www.instagram.com/hakiman_nurholis?igsh=Nno1OHg5Nnl1MHE5" target="_blank"><img src="ig.png" alt="Instagram"></a>
-      <a href="https://youtube.com/@hans.pyyyyy?si=Yy2l5C558uQ2ynDR" target="_blank"><img src="yt1.png" alt="YouTube"></a>
-      <a href="https://t.me/piandidev" target="_blank"><img src="tl.png" alt="Telegram"></a>
-      <a href="https://www.facebook.com/profile.php?id=61576289065160" target="_blank"><img src="fb.png" alt="Facebook"></a>
-      <a href="" target="_blank><img
-        <a href="https://www.linkedin.com/in/hakiman-nurholis-1b0317363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="in.png" alt="LinkedIn"></a>
+  <!-- KONTEN UTAMA -->
+  <div id="mainContent">
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay loop muted playsinline
+      style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
+      <source src="alok4.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
+
+    <div class="container">
+      <img src="ui11.png" alt="Foto Profil" class="profile-img" />
+      <div class="name-container">
+        <div id="nameDisplay" class="typing-text">HAKIMAN NURKHOLIS</div>
+      </div>
+      <p>INFORMATICS ENTHUSIAST 
+          TECH>_GENERALIS|GAME|CYBER|CODE </p>
+
+      <div class="social-icons">
+        <a href="https://hanspyyyy.github.io/hans_.py/" target="_blank"><img src="gt1.png" alt="GitHub"></a>
+        <a href="https://www.tiktok.com/@hans_.py?_t=ZS-8wG6A2HEbyC&_r=1" target="_blank"><img src="tiktok1.png" alt="TikTok"></a>
+        <a href="https://www.instagram.com/hakiman_nurholis?igsh=Nno1OHg5Nnl1MHE5" target="_blank"><img src="ig.png" alt="Instagram"></a>
+        <a href="https://youtube.com/@hans.pyyyyy?si=Yy2l5C558uQ2ynDR" target="_blank"><img src="yt1.png" alt="YouTube"></a>
+        <a href="https://t.me/piandidev" target="_blank"><img src="tl.png" alt="Telegram"></a>
+        <a href="https://www.facebook.com/profile.php?id=61576289065160" target="_blank"><img src="fb.png" alt="Facebook"></a>
+        <a href="" target="_blank"><img src="in.png" alt="LinkedIn"></a>
         <a href="https://wa.me/6288976444565" target="_blank"><img src="wab2.png" alt="WhatsApp bisnis"></a>
         <a href="https://pintarnya.com/cv/hakiman-nurkholis-khu03gabgw" target="_blank"><img src="pi1.png" alt="pintarnya"></a>
-    </div>
+      </div>
 
-    <div class="buttons">
-      <a href="https://hanspyyyy.github.io/Portofolio_MA.hans/" target="_blank">Portofolio SMA</a>
-      <a href="#" target="_blank">All your needs 🛒 </a>
-      <a href="https://hanspyyyy.github.io/Daftar-game-hans/" target="_blank">Game Hans</a>
-      <a href="https://hanspyyyy.github.io/PORTOFOLIO-MAHASISWA/" target="_blank">Portofolio S1</a>
+      <div class="buttons">
+        <a href="https://hanspyyyy.github.io/Portofolio_MA.hans/" target="_blank">Portofolio SMA</a>
+        <a href="#" target="_blank">All your needs 🛒 </a>
+        <a href="https://hanspyyyy.github.io/Daftar-game-hans/" target="_blank">Game Hans</a>
+        <a href="https://hanspyyyy.github.io/PORTOFOLIO-MAHASISWA/" target="_blank">Portofolio S1</a>
+      </div>
     </div>
   </div>
 
   <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.getElementById("loadingOverlay").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      }, 1500); // Delay 1.5 detik
+    });
+
     const nameElement = document.getElementById("nameDisplay");
-    const names = ["HAKIMAN NURHOLIS", "HANS_.PY"];
+    const names = ["HAKIMAN NURKHOLIS", "HANS_.PY"];
     let currentIndex = 0;
 
     function switchName() {
@@ -160,6 +209,5 @@
 
     setInterval(switchName, 5000);
   </script>
-
 </body>
-        </html>
+  </html>
